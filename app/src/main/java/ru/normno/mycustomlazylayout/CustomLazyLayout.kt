@@ -30,7 +30,7 @@ fun CustomLazyLayout(
                     state.onDrag(IntOffset(dragAmount.x.toInt(), dragAmount.y.toInt()))
                 }
             },
-        itemProvider = itemProvider,
+        itemProvider = { itemProvider },
     ) { constraints ->
         val boundaries = state.getBoundaries(constraints)
         val indexes = itemProvider.getItemIndexesInRange(boundaries)
